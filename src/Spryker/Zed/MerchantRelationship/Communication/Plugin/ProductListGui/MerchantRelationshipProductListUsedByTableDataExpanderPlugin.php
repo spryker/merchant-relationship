@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\MerchantRelationship\Communication\Plugin\ProductListGuiExtension;
+namespace Spryker\Zed\MerchantRelationship\Communication\Plugin\ProductListGui;
 
 use Generated\Shared\Transfer\ProductListUsedByTableDataTransfer;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
