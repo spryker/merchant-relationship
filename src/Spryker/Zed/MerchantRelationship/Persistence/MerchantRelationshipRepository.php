@@ -349,6 +349,7 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
 
         if (
             $merchantRelationshipConditionsTransfer->getMerchantRelationRequestUuids()
+            /** @phpstan-ignore function.alreadyNarrowedType */
             && method_exists($merchantRelationshipQuery, 'filterByMerchantRelationRequestUuid_In')
         ) {
             $merchantRelationshipQuery->filterByMerchantRelationRequestUuid_In(

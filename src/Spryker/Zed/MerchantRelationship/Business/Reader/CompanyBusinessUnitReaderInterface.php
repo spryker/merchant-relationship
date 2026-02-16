@@ -10,7 +10,7 @@ namespace Spryker\Zed\MerchantRelationship\Business\Reader;
 interface CompanyBusinessUnitReaderInterface
 {
     /**
-     * @param list<int> $companyBusinessUnitIds
+     * @param array<int> $companyBusinessUnitIds
      *
      * @return array<int, \Generated\Shared\Transfer\CompanyBusinessUnitTransfer>
      */

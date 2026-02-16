@@ -27,7 +27,7 @@ class CompanyBusinessUnitReader implements CompanyBusinessUnitReaderInterface
     }
 
     /**
-     * @param list<int> $companyBusinessUnitIds
+     * @param array<int> $companyBusinessUnitIds
      *
      * @return array<int, \Generated\Shared\Transfer\CompanyBusinessUnitTransfer>
      */

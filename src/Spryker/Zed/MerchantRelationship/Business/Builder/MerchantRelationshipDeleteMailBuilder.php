@@ -49,7 +49,7 @@ class MerchantRelationshipDeleteMailBuilder implements MerchantRelationshipDelet
     /**
      * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
      * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
-     * @param list<string> $assigneeCompanyBusinessUnitEmails
+     * @param array<string> $assigneeCompanyBusinessUnitEmails
      *
      * @return \Generated\Shared\Transfer\MailTransfer
      */
@@ -78,7 +78,7 @@ class MerchantRelationshipDeleteMailBuilder implements MerchantRelationshipDelet
     /**
      * @param \Generated\Shared\Transfer\MailTransfer $mailTransfer
      * @param string $ownerCompanyBusinessUnitEmail
-     * @param list<string> $assigneeCompanyBusinessUnitEmails
+     * @param array<string> $assigneeCompanyBusinessUnitEmails
      *
      * @return \Generated\Shared\Transfer\MailTransfer
      */

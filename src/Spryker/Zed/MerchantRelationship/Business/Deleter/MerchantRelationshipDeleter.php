@@ -30,20 +30,20 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
     protected MerchantRelationshipReaderInterface $merchantRelationshipReader;
 
     /**
-     * @var list<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPreDeletePluginInterface>
+     * @var array<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPreDeletePluginInterface>
      */
     protected $merchantRelationshipPreDeletePlugins;
 
     /**
-     * @var list<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPostDeletePluginInterface>
+     * @var array<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPostDeletePluginInterface>
      */
     protected array $merchantRelationshipPostDeletePlugins;
 
     /**
      * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager
      * @param \Spryker\Zed\MerchantRelationship\Business\Model\MerchantRelationshipReaderInterface $merchantRelationshipReader
-     * @param list<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPreDeletePluginInterface> $merchantRelationshipPreDeletePlugins
-     * @param list<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPostDeletePluginInterface> $merchantRelationshipPostDeletePlugins
+     * @param array<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPreDeletePluginInterface> $merchantRelationshipPreDeletePlugins
+     * @param array<\Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipPostDeletePluginInterface> $merchantRelationshipPostDeletePlugins
      */
     public function __construct(
         MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager,
