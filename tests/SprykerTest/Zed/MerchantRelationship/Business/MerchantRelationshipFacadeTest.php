@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\Business\MerchantRelationship;
+namespace SprykerTest\Zed\MerchantRelationship\Business;
 
 use Codeception\Test\Unit;
 use Exception;
@@ -30,8 +30,8 @@ use Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelation
  *
  * @group SprykerTest
  * @group Zed
- * @group Business
  * @group MerchantRelationship
+ * @group Business
  * @group Facade
  * @group MerchantRelationshipFacadeTest
  * Add your own group annotations below this line
