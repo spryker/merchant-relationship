@@ -95,11 +95,6 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipResponseTransfer
-     */
     protected function createByMerchantRelationshipRequestTransfer(
         MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer
     ): MerchantRelationshipResponseTransfer {
@@ -137,11 +132,6 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
         return $merchantRelationshipResponseTransfer->setMerchantRelationship($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function executeCreateTransaction(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer
@@ -162,11 +152,6 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
         return $this->executeMerchantRelationshipPostCreatePlugins($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function executeMerchantRelationshipPostCreatePlugins(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         foreach ($this->merchantRelationshipPostCreatePlugins as $merchantRelationshipPostCreatePlugin) {
@@ -176,11 +161,6 @@ class MerchantRelationshipCreator implements MerchantRelationshipCreatorInterfac
         return $merchantRelationshipTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCriteriaTransfer
-     */
     protected function createMerchantCriteriaTransfer(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantCriteriaTransfer
     {
         $merchantCriteriaTransfer = new MerchantCriteriaTransfer();

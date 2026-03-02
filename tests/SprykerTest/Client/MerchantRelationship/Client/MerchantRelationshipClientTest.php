@@ -31,9 +31,6 @@ class MerchantRelationshipClientTest extends Unit
      */
     protected MerchantRelationshipClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionMakesZedCall(): void
     {
         // Assert

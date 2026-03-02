@@ -114,11 +114,6 @@ class MerchantRelationshipBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return void
-     */
     public function assertMerchantRelationshipDoesNotExist(int $idMerchantRelationship): void
     {
         $merchantRelationshipQuery = $this->getMerchantRelationshipQuery()
@@ -127,11 +122,6 @@ class MerchantRelationshipBusinessTester extends Actor
         $this->assertSame(0, $merchantRelationshipQuery->count());
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return void
-     */
     public function assertMerchantRelationshipToCompanyBusinessUnitDoesNotExist(int $idMerchantRelationship): void
     {
         $merchantRelationshipToCompanyBusinessUnitQuery = $this->getMerchantRelationshipToCompanyBusinessUnitQuery()
@@ -140,9 +130,6 @@ class MerchantRelationshipBusinessTester extends Actor
         $this->assertSame(0, $merchantRelationshipToCompanyBusinessUnitQuery->count());
     }
 
-    /**
-     * @return int
-     */
     public function getMerchantRelationsCount(): int
     {
         return SpyMerchantRelationshipQuery::create()->count();
@@ -226,20 +213,11 @@ class MerchantRelationshipBusinessTester extends Actor
         ], $merchantRelationshipSeedData));
     }
 
-    /**
-     * @return void
-     */
     public function ensureMerchantRelationshipTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getMerchantRelationshipQuery());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
-     *
-     * @return void
-     */
     public function assertCollectionContainsMerchantRelationship(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
@@ -253,12 +231,6 @@ class MerchantRelationshipBusinessTester extends Actor
         $this->assertSameMerchantRelationship($merchantRelationshipTransfer, $actualMerchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
-     *
-     * @return void
-     */
     public function assertCollectionDoesNotContainMerchantRelationship(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
@@ -271,12 +243,6 @@ class MerchantRelationshipBusinessTester extends Actor
         $this->assertNull($actualMerchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $expectedMerchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $actualMerchantRelationshipTransfer
-     *
-     * @return void
-     */
     public function assertSameMerchantRelationship(
         MerchantRelationshipTransfer $expectedMerchantRelationshipTransfer,
         MerchantRelationshipTransfer $actualMerchantRelationshipTransfer
@@ -299,12 +265,6 @@ class MerchantRelationshipBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
-     * @param int $idMerchantRelationship
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     protected function findMerchantRelationshipByIdMerchantRelationship(
         MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer,
         int $idMerchantRelationship
@@ -318,11 +278,6 @@ class MerchantRelationshipBusinessTester extends Actor
         return null;
     }
 
-    /**
-     * @param int $idMerchant
-     *
-     * @return void
-     */
     public function deactivateMerchant(int $idMerchant): void
     {
         $merchantEntity = $this->getMerchantQuery()
@@ -333,25 +288,16 @@ class MerchantRelationshipBusinessTester extends Actor
         $merchantEntity->save();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     protected function getMerchantRelationshipQuery(): SpyMerchantRelationshipQuery
     {
         return SpyMerchantRelationshipQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipToCompanyBusinessUnitQuery
-     */
     protected function getMerchantRelationshipToCompanyBusinessUnitQuery(): SpyMerchantRelationshipToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationshipToCompanyBusinessUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Merchant\Persistence\SpyMerchantQuery
-     */
     protected function getMerchantQuery(): SpyMerchantQuery
     {
         return SpyMerchantQuery::create();

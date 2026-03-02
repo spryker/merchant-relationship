@@ -59,9 +59,6 @@ use Spryker\Zed\MerchantRelationship\MerchantRelationshipDependencyProvider;
  */
 class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Creator\MerchantRelationshipCreatorInterface
-     */
     public function createMerchantRelationshipCreator(): MerchantRelationshipCreatorInterface
     {
         return new MerchantRelationshipCreator(
@@ -74,17 +71,11 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Creator\MerchantRelationshipCompanyBusinessUnitCreatorInterface
-     */
     public function createMerchantRelationshipCompanyBusinessUnitCreator(): MerchantRelationshipCompanyBusinessUnitCreatorInterface
     {
         return new MerchantRelationshipCompanyBusinessUnitCreator($this->getEntityManager());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Updater\MerchantRelationshipUpdaterInterface
-     */
     public function createMerchantRelationshipUpdater(): MerchantRelationshipUpdaterInterface
     {
         return new MerchantRelationshipUpdater(
@@ -96,9 +87,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Deleter\MerchantRelationshipDeleterInterface
-     */
     public function createMerchantRelationshipDeleter(): MerchantRelationshipDeleterInterface
     {
         return new MerchantRelationshipDeleter(
@@ -109,9 +97,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Updater\MerchantRelationshipCompanyBusinessUnitUpdaterInterface
-     */
     public function createMerchantRelationshipCompanyBusinessUnitUpdater(): MerchantRelationshipCompanyBusinessUnitUpdaterInterface
     {
         return new MerchantRelationshipCompanyBusinessUnitUpdater(
@@ -121,17 +106,11 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Mapper\MerchantRelationshipCompanyBusinessUnitMapperInterface
-     */
     public function createMerchantRelationshipCompanyBusinessUnitMapper(): MerchantRelationshipCompanyBusinessUnitMapperInterface
     {
         return new MerchantRelationshipCompanyBusinessUnitMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Model\MerchantRelationshipReaderInterface
-     */
     public function createMerchantRelationshipReader(): MerchantRelationshipReaderInterface
     {
         return new MerchantRelationshipReader(
@@ -142,33 +121,21 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Mapper\MerchantRelationshipCriteriaMapperInterface
-     */
     public function createMerchantRelationshipCriteriaMapper(): MerchantRelationshipCriteriaMapperInterface
     {
         return new MerchantRelationshipCriteriaMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\KeyGenerator\MerchantRelationshipKeyGeneratorInterface
-     */
     public function createMerchantRelationshipKeyGenerator(): MerchantRelationshipKeyGeneratorInterface
     {
         return new MerchantRelationshipKeyGenerator($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Expander\MerchantRelationshipExpanderInterface
-     */
     public function createMerchantRelationshipExpander(): MerchantRelationshipExpanderInterface
     {
         return new MerchantRelationshipExpander($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\MerchantRelationshipValidatorInterface
-     */
     public function createMerchantRelationshipCreateValidator(): MerchantRelationshipValidatorInterface
     {
         return new MerchantRelationshipCreateValidator(
@@ -182,9 +149,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\MerchantRelationshipValidatorInterface
-     */
     public function createMerchantRelationshipUpdateValidator(): MerchantRelationshipValidatorInterface
     {
         return new MerchantRelationshipUpdateValidator(
@@ -196,9 +160,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createMerchantReferenceExistsValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new MerchantReferenceExistsValidatorRule(
@@ -206,17 +167,11 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createMerchantRelationshipKeyUniqueValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new MerchantRelationshipKeyUniqueValidatorRule($this->createMerchantRelationshipReader());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createOwnerCompanyBusinessUnitExistsValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new OwnerCompanyBusinessUnitExistsValidatorRule(
@@ -224,9 +179,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createOwnerCompanyBusinessUnitAllowedValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new OwnerCompanyBusinessUnitAllowedValidatorRule(
@@ -235,9 +187,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createAssignedCompanyBusinessUnitAllowedUpdateValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new AssignedCompanyBusinessUnitAllowedUpdateValidatorRule(
@@ -246,9 +195,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Validator\ValidatorRule\MerchantRelationshipValidatorRuleInterface
-     */
     public function createAssignedCompanyBusinessUnitAllowedCreateValidatorRule(): MerchantRelationshipValidatorRuleInterface
     {
         return new AssignedCompanyBusinessUnitAllowedCreateValidatorRule(
@@ -257,9 +203,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Sender\MerchantRelationshipDeleteMailNotificationSenderInterface
-     */
     public function createMerchantRelationshipDeleteMailNotificationSender(): MerchantRelationshipDeleteMailNotificationSenderInterface
     {
         return new MerchantRelationshipDeleteMailNotificationSender(
@@ -270,9 +213,6 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Builder\MerchantRelationshipDeleteMailBuilderInterface
-     */
     public function createMerchantRelationshipDeleteMailBuilder(): MerchantRelationshipDeleteMailBuilderInterface
     {
         return new MerchantRelationshipDeleteMailBuilder(
@@ -281,17 +221,11 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Reader\MerchantReaderInterface
-     */
     public function createMerchantReader(): MerchantReaderInterface
     {
         return new MerchantReader($this->getMerchantFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Business\Reader\CompanyBusinessUnitReaderInterface
-     */
     public function createCompanyBusinessUnitReader(): CompanyBusinessUnitReaderInterface
     {
         return new CompanyBusinessUnitReader($this->getCompanyBusinessUnitFacade());
@@ -337,33 +271,21 @@ class MerchantRelationshipBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::PLUGINS_MERCHANT_RELATIONSHIP_UPDATE_VALIDATOR);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantRelationshipToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::FACADE_MERCHANT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToCompanyBusinessUnitFacadeInterface
-     */
     public function getCompanyBusinessUnitFacade(): MerchantRelationshipToCompanyBusinessUnitFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::FACADE_COMPANY_BUSINESS_UNIT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToMailFacadeInterface
-     */
     public function getMailFacade(): MerchantRelationshipToMailFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::FACADE_MAIL);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): MerchantRelationshipToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::FACADE_LOCALE);

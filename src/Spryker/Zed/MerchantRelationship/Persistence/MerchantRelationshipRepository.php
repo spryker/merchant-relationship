@@ -81,11 +81,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
             ->mapEntityToMerchantRelationshipTransfer($spyMerchantRelation, new MerchantRelationshipTransfer());
     }
 
-    /**
-     * @param string $merchantRelationshipKey
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function findMerchantRelationshipByKey(string $merchantRelationshipKey): ?MerchantRelationshipTransfer
     {
         $spyMerchantRelation = $this->getFactory()
@@ -119,11 +114,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         return $companyBusinessUnitIds->toArray();
     }
 
-    /**
-     * @param string $candidate
-     *
-     * @return bool
-     */
     public function hasKey(string $candidate): bool
     {
         return $this->getFactory()
@@ -132,9 +122,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
             ->exists();
     }
 
-    /**
-     * @return int
-     */
     public function getMaxMerchantRelationshipId(): int
     {
         /** @var int|null $id */
@@ -275,12 +262,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
             );
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery $merchantRelationshipQuery
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
-     *
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     protected function addSortingToMerchantRelationshipQueryFromCriteria(
         SpyMerchantRelationshipQuery $merchantRelationshipQuery,
         MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
@@ -379,12 +360,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         return $merchantRelationshipQuery;
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery $merchantRelationshipQuery
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
-     *
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     protected function addSearchConditionsToMerchantRelationshipQueryFromCriteria(
         SpyMerchantRelationshipQuery $merchantRelationshipQuery,
         MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
@@ -433,9 +408,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         return $merchantRelationshipQuery;
     }
 
-    /**
-     * @return string
-     */
     protected function getMerchantRelationshipToCompanyBusinessUnitQuerySql(): string
     {
         /** @var literal-string $where */
@@ -455,12 +427,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         return $merchantRelationRequestToCompanyBusinessUnitQuery->createSelectSql($params);
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery $merchantRelationshipQuery
-     * @param string $column
-     *
-     * @return bool
-     */
     protected function columnExists(SpyMerchantRelationshipQuery $merchantRelationshipQuery, string $column): bool
     {
         if ($merchantRelationshipQuery->getTableMap()->hasColumn($column)) {
@@ -480,12 +446,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         return false;
     }
 
-    /**
-     * @param int $limit
-     * @param int $offset
-     *
-     * @return int
-     */
     protected function calculatePageNumber(int $limit, int $offset): int
     {
         return $limit ? (int)($offset / $limit + 1) : 1;

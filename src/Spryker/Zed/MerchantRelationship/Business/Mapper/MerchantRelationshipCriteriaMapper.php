@@ -23,12 +23,6 @@ class MerchantRelationshipCriteriaMapper implements MerchantRelationshipCriteria
      */
     protected const SORT_ASCENDING = 'ASC';
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipFilterTransfer $merchantRelationshipFilterTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer
-     */
     public function mapMerchantRelationshipFilterToMerchantRelationshipCriteria(
         MerchantRelationshipFilterTransfer $merchantRelationshipFilterTransfer,
         MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer

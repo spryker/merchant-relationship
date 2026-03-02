@@ -16,10 +16,6 @@ use Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryI
 
 abstract class AbstractAssignedCompanyBusinessUnitValidatorRule extends AbstractMerchantRelationshipValidatorRule
 {
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     */
     public function __construct(
         MerchantRelationshipRepositoryInterface $merchantRelationshipRepository,
         MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
@@ -28,11 +24,6 @@ abstract class AbstractAssignedCompanyBusinessUnitValidatorRule extends Abstract
         $this->companyBusinessUnitFacade = $companyBusinessUnitFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyTransfer|null
-     */
     protected function findCompanyTransferByMerchantRelationship(
         MerchantRelationshipTransfer $merchantRelationshipTransfer
     ): ?CompanyTransfer {
@@ -48,11 +39,6 @@ abstract class AbstractAssignedCompanyBusinessUnitValidatorRule extends Abstract
         return $existingMerchantRelationshipTransfer->getOwnerCompanyBusinessUnitOrFail()->getCompany();
     }
 
-    /**
-     * @param int $idCompanyBusinessUnit
-     *
-     * @return \Generated\Shared\Transfer\CompanyTransfer|null
-     */
     protected function findCompanyTransferByCompanyBusinessUnitId(int $idCompanyBusinessUnit): ?CompanyTransfer
     {
         $companyBusinessUnitTransfer = $this->companyBusinessUnitFacade->findCompanyBusinessUnitById($idCompanyBusinessUnit);

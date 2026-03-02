@@ -18,9 +18,6 @@ class CompanyBusinessUnitReader implements CompanyBusinessUnitReaderInterface
      */
     protected MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     */
     public function __construct(MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade)
     {
         $this->companyBusinessUnitFacade = $companyBusinessUnitFacade;

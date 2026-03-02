@@ -80,11 +80,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
      */
     public const FACADE_LOCALE = 'FACADE_LOCALE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -103,11 +98,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -132,11 +122,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipPreDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_PRE_DELETE, function () {
@@ -146,11 +131,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipPostCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_POST_CREATE, function () {
@@ -160,11 +140,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipPostUpdatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_POST_UPDATE, function () {
@@ -174,11 +149,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipCreateValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_CREATE_VALIDATOR, function () {
@@ -188,11 +158,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipUpdateValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_UPDATE_VALIDATOR, function () {
@@ -202,11 +167,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_EXPANDER, function () {
@@ -216,11 +176,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipPostDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_POST_DELETE, function () {
@@ -286,11 +241,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT, function (Container $container) {
@@ -300,11 +250,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyBusinessUnitFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_BUSINESS_UNIT, function (Container $container) {
@@ -314,11 +259,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMailFacade(Container $container): Container
     {
         $container->set(static::FACADE_MAIL, function (Container $container) {
@@ -330,11 +270,6 @@ class MerchantRelationshipDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {

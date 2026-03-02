@@ -22,41 +22,26 @@ use Spryker\Zed\MerchantRelationship\Persistence\Propel\Mapper\MerchantRelations
  */
 class MerchantRelationshipPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     public function createMerchantRelationshipQuery(): SpyMerchantRelationshipQuery
     {
         return SpyMerchantRelationshipQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipToCompanyBusinessUnitQuery
-     */
     public function createMerchantRelationshipToCompanyBusinessUnitQuery(): SpyMerchantRelationshipToCompanyBusinessUnitQuery
     {
         return SpyMerchantRelationshipToCompanyBusinessUnitQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Persistence\Propel\Mapper\MerchantRelationshipMapper
-     */
     public function createPropelMerchantRelationshipMapper(): MerchantRelationshipMapper
     {
         return new MerchantRelationshipMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Persistence\Propel\Mapper\CompanyBusinessUnitMapper
-     */
     public function createCompanyBusinessUnitMapper(): CompanyBusinessUnitMapper
     {
         return new CompanyBusinessUnitMapper();
     }
 
-    /**
-     * @return \Orm\Zed\CompanyBusinessUnit\Persistence\SpyCompanyBusinessUnitQuery
-     */
     public function getCompanyBusinessUnitPropelQuery(): SpyCompanyBusinessUnitQuery
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::PROPEL_QUERY_COMPANY_BUSINESS_UNIT);

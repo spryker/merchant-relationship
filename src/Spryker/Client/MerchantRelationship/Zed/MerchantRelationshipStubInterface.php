@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer;
 
 interface MerchantRelationshipStubInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer
-     */
     public function getMerchantRelationshipCollection(
         MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
     ): MerchantRelationshipCollectionTransfer;

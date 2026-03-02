@@ -34,10 +34,6 @@ class MerchantRelationshipDeleteMailBuilder implements MerchantRelationshipDelet
      */
     protected MerchantRelationshipToLocaleFacadeInterface $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\MerchantRelationshipConfig $merchantRelationshipConfig
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(
         MerchantRelationshipConfig $merchantRelationshipConfig,
         MerchantRelationshipToLocaleFacadeInterface $localeFacade
@@ -116,11 +112,6 @@ class MerchantRelationshipDeleteMailBuilder implements MerchantRelationshipDelet
         return null;
     }
 
-    /**
-     * @param string $url
-     *
-     * @return string
-     */
     protected function formatUrl(string $url): string
     {
         return sprintf('%s%s', $this->merchantRelationshipConfig->getYvesBaseUrl(), $url);

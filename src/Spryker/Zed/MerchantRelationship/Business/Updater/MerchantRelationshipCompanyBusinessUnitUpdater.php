@@ -30,11 +30,6 @@ class MerchantRelationshipCompanyBusinessUnitUpdater implements MerchantRelation
      */
     protected $merchantRelationshipCompanyBusinessUnitMapper;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager
-     * @param \Spryker\Zed\MerchantRelationship\Business\Mapper\MerchantRelationshipCompanyBusinessUnitMapperInterface $merchantRelationshipCompanyBusinessUnitMapper
-     */
     public function __construct(
         MerchantRelationshipRepositoryInterface $merchantRelationshipRepository,
         MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager,
@@ -45,11 +40,6 @@ class MerchantRelationshipCompanyBusinessUnitUpdater implements MerchantRelation
         $this->merchantRelationshipCompanyBusinessUnitMapper = $merchantRelationshipCompanyBusinessUnitMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function updateMerchantRelationshipCompanyBusinessUnitRelations(
         MerchantRelationshipTransfer $merchantRelationshipTransfer
     ): MerchantRelationshipTransfer {
@@ -105,11 +95,6 @@ class MerchantRelationshipCompanyBusinessUnitUpdater implements MerchantRelation
         return array_unique($companyBusinessUnitIds);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return bool
-     */
     protected function hasCompanyBusinessUnitsAssigned(MerchantRelationshipTransfer $merchantRelationshipTransfer): bool
     {
         return $merchantRelationshipTransfer->getAssigneeCompanyBusinessUnits()

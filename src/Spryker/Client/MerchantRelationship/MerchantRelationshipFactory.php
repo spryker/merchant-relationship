@@ -14,17 +14,11 @@ use Spryker\Client\MerchantRelationship\Zed\MerchantRelationshipStubInterface;
 
 class MerchantRelationshipFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\MerchantRelationship\Zed\MerchantRelationshipStubInterface
-     */
     public function createMerchantRelationshipStub(): MerchantRelationshipStubInterface
     {
         return new MerchantRelationshipStub($this->getZedRequestClient());
     }
 
-    /**
-     * @return \Spryker\Client\MerchantRelationship\Dependency\Client\MerchantRelationshipToZedRequestClientInterface
-     */
     public function getZedRequestClient(): MerchantRelationshipToZedRequestClientInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipDependencyProvider::CLIENT_ZED_REQUEST);

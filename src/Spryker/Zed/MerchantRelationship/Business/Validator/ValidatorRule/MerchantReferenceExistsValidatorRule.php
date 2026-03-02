@@ -21,20 +21,11 @@ class MerchantReferenceExistsValidatorRule implements MerchantRelationshipValida
      */
     protected $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(MerchantRelationshipToMerchantFacadeInterface $merchantFacade)
     {
         $this->merchantFacade = $merchantFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     public function validate(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
@@ -69,22 +60,11 @@ class MerchantReferenceExistsValidatorRule implements MerchantRelationshipValida
         return $merchantRelationshipValidationErrorCollectionTransfer->addError($merchantRelationshipErrorTransfer);
     }
 
-    /**
-     * @param string $merchantReference
-     *
-     * @return \Generated\Shared\Transfer\MerchantCriteriaTransfer
-     */
     protected function createMerchantCriteriaTransfer(string $merchantReference): MerchantCriteriaTransfer
     {
         return (new MerchantCriteriaTransfer())->setMerchantReference($merchantReference);
     }
 
-    /**
-     * @param string $field
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipErrorTransfer
-     */
     protected function createMerchantRelationshipErrorTransfer(string $field, string $message): MerchantRelationshipErrorTransfer
     {
         return (new MerchantRelationshipErrorTransfer())

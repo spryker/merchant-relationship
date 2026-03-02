@@ -57,12 +57,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         $this->merchantRelationshipPostDeletePlugins = $merchantRelationshipPostDeletePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipRequestTransfer|null $merchantRelationshipRequestTransfer
-     *
-     * @return void
-     */
     public function delete(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         ?MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer = null
@@ -86,11 +80,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         $this->deleteByMerchantRelationshipTransfer($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return void
-     */
     protected function deleteByMerchantRelationshipTransfer(MerchantRelationshipTransfer $merchantRelationshipTransfer): void
     {
         $this->getTransactionHandler()->handleTransaction(function () use ($merchantRelationshipTransfer) {
@@ -98,11 +87,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return void
-     */
     protected function executeDeleteMerchantRelationshipByIdTransaction(MerchantRelationshipTransfer $merchantRelationshipTransfer): void
     {
         $this->executeMerchantRelationshipPreDeletePlugins($merchantRelationshipTransfer);
@@ -110,11 +94,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         $this->executeMerchantRelationshipPostDeletePlugins($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return void
-     */
     protected function executeMerchantRelationshipPreDeletePlugins(MerchantRelationshipTransfer $merchantRelationshipTransfer): void
     {
         foreach ($this->merchantRelationshipPreDeletePlugins as $merchantRelationshipPreDeletePlugin) {
@@ -122,11 +101,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return void
-     */
     protected function executeMerchantRelationshipPostDeletePlugins(MerchantRelationshipTransfer $merchantRelationshipTransfer): void
     {
         foreach ($this->merchantRelationshipPostDeletePlugins as $merchantRelationshipPostDeletePlugin) {
@@ -134,11 +108,6 @@ class MerchantRelationshipDeleter implements MerchantRelationshipDeleterInterfac
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     protected function findMerchantRelationship(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?MerchantRelationshipTransfer
     {
         $merchantRelationshipConditionsTransfer = (new MerchantRelationshipConditionsTransfer())

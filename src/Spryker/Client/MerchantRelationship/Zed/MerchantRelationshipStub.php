@@ -18,9 +18,6 @@ class MerchantRelationshipStub implements MerchantRelationshipStubInterface
      */
     protected MerchantRelationshipToZedRequestClientInterface $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\MerchantRelationship\Dependency\Client\MerchantRelationshipToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(MerchantRelationshipToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;

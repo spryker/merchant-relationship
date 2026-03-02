@@ -32,12 +32,6 @@ class MerchantRelationshipUpdateValidator implements MerchantRelationshipValidat
         $this->merchantRelationshipUpdateValidatorPlugins = $merchantRelationshipUpdateValidatorPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     public function validate(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
@@ -55,12 +49,6 @@ class MerchantRelationshipUpdateValidator implements MerchantRelationshipValidat
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     protected function executeMerchantRelationshipUpdateValidatorPlugins(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer

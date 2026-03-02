@@ -34,11 +34,6 @@ abstract class AbstractMerchantRelationshipValidatorRule implements MerchantRela
      */
     protected static $companyBusinessUnitCollectionTransfers;
 
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     protected function findMerchantRelationship(int $idMerchantRelationship): ?MerchantRelationshipTransfer
     {
         if (isset(static::$merchantRelationshipTransfers[$idMerchantRelationship])) {
@@ -58,11 +53,6 @@ abstract class AbstractMerchantRelationshipValidatorRule implements MerchantRela
         return static::$merchantRelationshipTransfers[$idMerchantRelationship];
     }
 
-    /**
-     * @param int $idCompany
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitCollectionTransfer
-     */
     protected function getCompanyBusinessUnitCollection(int $idCompany): CompanyBusinessUnitCollectionTransfer
     {
         if (isset(static::$companyBusinessUnitCollectionTransfers[$idCompany])) {
@@ -76,22 +66,11 @@ abstract class AbstractMerchantRelationshipValidatorRule implements MerchantRela
         return static::$companyBusinessUnitCollectionTransfers[$idCompany];
     }
 
-    /**
-     * @param int $idCompany
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitCriteriaFilterTransfer
-     */
     protected function createCompanyBusinessUnitCriteriaFilterTransfer(int $idCompany): CompanyBusinessUnitCriteriaFilterTransfer
     {
         return (new CompanyBusinessUnitCriteriaFilterTransfer())->setIdCompany($idCompany);
     }
 
-    /**
-     * @param string $field
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipErrorTransfer
-     */
     protected function createMerchantRelationshipErrorTransfer(string $field, string $message): MerchantRelationshipErrorTransfer
     {
         return (new MerchantRelationshipErrorTransfer())

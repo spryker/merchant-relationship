@@ -21,9 +21,6 @@ use Spryker\Zed\MerchantRelationship\Communication\Hydrator\MerchantRelationship
  */
 class MerchantRelationshipCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Communication\Hydrator\MerchantRelationshipHydratorInterface
-     */
     public function createMerchantRelationshipHydrator(): MerchantRelationshipHydratorInterface
     {
         return new MerchantRelationshipHydrator(
@@ -31,9 +28,6 @@ class MerchantRelationshipCommunicationFactory extends AbstractCommunicationFact
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationship\Communication\Expander\MerchantRelationshipAclEntityConfigurationExpanderInterface
-     */
     public function createMerchantRelationshipAclEntityConfigurationExpander(): MerchantRelationshipAclEntityConfigurationExpanderInterface
     {
         return new MerchantRelationshipAclEntityConfigurationExpander();

@@ -21,17 +21,11 @@ class MerchantRelationshipKeyGenerator implements MerchantRelationshipKeyGenerat
      */
     protected $repository;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $repository
-     */
     public function __construct(MerchantRelationshipRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }
 
-    /**
-     * @return string
-     */
     public function generateMerchantRelationshipKey(): string
     {
         $index = $this->repository->getMaxMerchantRelationshipId();
@@ -42,9 +36,6 @@ class MerchantRelationshipKeyGenerator implements MerchantRelationshipKeyGenerat
         return $candidate;
     }
 
-    /**
-     * @return string
-     */
     protected function getKeyPrefix(): string
     {
         return static::KEY_PREFIX;

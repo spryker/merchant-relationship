@@ -36,12 +36,6 @@ class MerchantRelationshipDeleteMailNotificationSender implements MerchantRelati
      */
     protected MerchantRelationshipToMailFacadeInterface $mailFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Business\Reader\CompanyBusinessUnitReaderInterface $companyBusinessUnitReader
-     * @param \Spryker\Zed\MerchantRelationship\Business\Reader\MerchantReaderInterface $merchantReader
-     * @param \Spryker\Zed\MerchantRelationship\Business\Builder\MerchantRelationshipDeleteMailBuilderInterface $merchantRelationshipDeleteMailBuilder
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToMailFacadeInterface $mailFacade
-     */
     public function __construct(
         CompanyBusinessUnitReaderInterface $companyBusinessUnitReader,
         MerchantReaderInterface $merchantReader,
@@ -54,11 +48,6 @@ class MerchantRelationshipDeleteMailNotificationSender implements MerchantRelati
         $this->mailFacade = $mailFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return void
-     */
     public function sendMerchantRelationshipDeleteMailNotification(MerchantRelationshipTransfer $merchantRelationshipTransfer): void
     {
         $companyBusinessUnitTransfersIndexedByIdCompanyBusinessUnit = $this->companyBusinessUnitReader

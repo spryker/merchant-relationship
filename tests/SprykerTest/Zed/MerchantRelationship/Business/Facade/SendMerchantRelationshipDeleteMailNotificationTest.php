@@ -42,9 +42,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
      */
     protected MerchantRelationshipBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testSendsMailWhenBusinessUnitOwnerHaveEmail(): void
     {
         // Arrange
@@ -61,9 +58,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testAddsAssigneeCompanyBusinessUnitEmailAsRecipientBcc(): void
     {
         // Arrange
@@ -90,9 +84,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotAddAssigneeCompanyBusinessUnitEmailWhenItDoesNotHaveOne(): void
     {
         // Arrange
@@ -115,9 +106,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotAddAssigneeCompanyBusinessUnitEmailWhenItIsSameAsOwnerCompanyBusinessUnitEmail(): void
     {
         // Arrange
@@ -140,9 +128,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenOwnerCompanyBusinessUnitDoNotHaveEmail(): void
     {
         // Arrange
@@ -159,9 +144,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenNonExistingOwnerCompanyBusinessUnitIdIsProvided(): void
     {
         // Arrange
@@ -177,9 +159,6 @@ class SendMerchantRelationshipDeleteMailNotificationTest extends Unit
         $this->tester->getFacade()->sendMerchantRelationshipDeleteMailNotification($merchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenNonExistingMerchantIdIsProvided(): void
     {
         // Arrange

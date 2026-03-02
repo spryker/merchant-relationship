@@ -27,11 +27,6 @@ class MerchantRelationshipAclEntityConfigurationExpander implements MerchantRela
      */
     protected const OPERATION_MASK_DELETE = 0b1000;
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     public function expand(AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer): AclEntityMetadataConfigTransfer
     {
         $aclEntityMetadataConfigTransfer
@@ -59,11 +54,6 @@ class MerchantRelationshipAclEntityConfigurationExpander implements MerchantRela
         return $aclEntityMetadataConfigTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     protected function expandForMerchantRelationshipModel(
         AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
     ): AclEntityMetadataConfigTransfer {
@@ -91,11 +81,6 @@ class MerchantRelationshipAclEntityConfigurationExpander implements MerchantRela
         return $aclEntityMetadataConfigTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AclEntityMetadataConfigTransfer
-     */
     protected function expandForMerchantRelationshipToCompanyBusinessUnitModel(
         AclEntityMetadataConfigTransfer $aclEntityMetadataConfigTransfer
     ): AclEntityMetadataConfigTransfer {

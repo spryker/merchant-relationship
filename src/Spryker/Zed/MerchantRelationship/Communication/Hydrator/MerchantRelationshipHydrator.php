@@ -18,20 +18,12 @@ class MerchantRelationshipHydrator implements MerchantRelationshipHydratorInterf
      */
     protected $merchantRelationshipRepository;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
-     */
     public function __construct(
         MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
     ) {
         $this->merchantRelationshipRepository = $merchantRelationshipRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function hydrate(CompanyUserTransfer $companyUserTransfer): CompanyUserTransfer
     {
         if ($companyUserTransfer->getCompanyBusinessUnit()) {

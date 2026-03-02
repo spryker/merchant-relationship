@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CompanyUserTransfer;
 
 interface MerchantRelationshipHydratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function hydrate(CompanyUserTransfer $companyUserTransfer): CompanyUserTransfer;
 }

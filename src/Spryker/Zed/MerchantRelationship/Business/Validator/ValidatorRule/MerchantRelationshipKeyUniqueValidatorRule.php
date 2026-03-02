@@ -19,20 +19,11 @@ class MerchantRelationshipKeyUniqueValidatorRule implements MerchantRelationship
      */
     protected $merchantRelationshipReader;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Business\Model\MerchantRelationshipReaderInterface $merchantRelationshipReader
-     */
     public function __construct(MerchantRelationshipReaderInterface $merchantRelationshipReader)
     {
         $this->merchantRelationshipReader = $merchantRelationshipReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     public function validate(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
@@ -54,12 +45,6 @@ class MerchantRelationshipKeyUniqueValidatorRule implements MerchantRelationship
         return $merchantRelationshipValidationErrorCollectionTransfer->addError($merchantRelationshipErrorTransfer);
     }
 
-    /**
-     * @param string $field
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipErrorTransfer
-     */
     protected function createMerchantRelationshipErrorTransfer(string $field, string $message): MerchantRelationshipErrorTransfer
     {
         return (new MerchantRelationshipErrorTransfer())

@@ -9,8 +9,5 @@ namespace Spryker\Zed\MerchantRelationship\Business\KeyGenerator;
 
 interface MerchantRelationshipKeyGeneratorInterface
 {
-    /**
-     * @return string
-     */
     public function generateMerchantRelationshipKey(): string;
 }

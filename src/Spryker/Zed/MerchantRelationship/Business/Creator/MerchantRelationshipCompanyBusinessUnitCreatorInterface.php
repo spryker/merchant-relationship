@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\MerchantRelationshipTransfer;
 
 interface MerchantRelationshipCompanyBusinessUnitCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function createMerchantRelationshipCompanyBusinessUnitRelations(
         MerchantRelationshipTransfer $merchantRelationshipTransfer
     ): MerchantRelationshipTransfer;

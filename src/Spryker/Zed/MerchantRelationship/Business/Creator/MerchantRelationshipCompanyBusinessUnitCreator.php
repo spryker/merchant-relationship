@@ -18,19 +18,11 @@ class MerchantRelationshipCompanyBusinessUnitCreator implements MerchantRelation
      */
     protected $merchantRelationshipEntityManager;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager
-     */
     public function __construct(MerchantRelationshipEntityManagerInterface $merchantRelationshipEntityManager)
     {
         $this->merchantRelationshipEntityManager = $merchantRelationshipEntityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function createMerchantRelationshipCompanyBusinessUnitRelations(
         MerchantRelationshipTransfer $merchantRelationshipTransfer
     ): MerchantRelationshipTransfer {
@@ -70,11 +62,6 @@ class MerchantRelationshipCompanyBusinessUnitCreator implements MerchantRelation
         return array_unique($companyBusinessUnitIds);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return bool
-     */
     protected function hasCompanyBusinessUnitsAssigned(MerchantRelationshipTransfer $merchantRelationshipTransfer): bool
     {
         return $merchantRelationshipTransfer->getAssigneeCompanyBusinessUnits()

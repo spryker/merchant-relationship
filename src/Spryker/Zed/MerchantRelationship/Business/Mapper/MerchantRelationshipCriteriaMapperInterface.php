@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\MerchantRelationshipFilterTransfer;
 
 interface MerchantRelationshipCriteriaMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipFilterTransfer $merchantRelationshipFilterTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipCriteriaTransfer
-     */
     public function mapMerchantRelationshipFilterToMerchantRelationshipCriteria(
         MerchantRelationshipFilterTransfer $merchantRelationshipFilterTransfer,
         MerchantRelationshipCriteriaTransfer $merchantRelationshipCriteriaTransfer

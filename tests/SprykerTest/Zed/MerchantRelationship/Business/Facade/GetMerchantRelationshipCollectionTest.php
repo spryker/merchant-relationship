@@ -37,9 +37,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
      */
     protected MerchantRelationshipBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -47,9 +44,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->ensureMerchantRelationshipTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionWillReturnRelationshipsFilteredByOwnerCompanyBusinessUnitIds(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionContainsMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionWillReturnRelationshipsFilteredByMerchantIsActiveStatus(): void
     {
         // Arrange
@@ -99,9 +90,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionContainsMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsMerchantRelationshipCollectionExpandedWithAssigneeBusinessUnits(): void
     {
         // Arrange
@@ -124,9 +112,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionContainsMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsCollectionFilteredByCreatedAtFrom(): void
     {
         // Arrange
@@ -156,9 +141,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionContainsMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsCollectionFilteredByCreatedAtTo(): void
     {
         // Arrange
@@ -188,9 +170,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionContainsMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersCollectionByOwnerCompanyBusinessUnitNameSearchConditions(): void
     {
         // Arrange
@@ -223,9 +202,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionDoesNotContainMerchantRelationship($merchantRelationship3Transfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersCollectionByOwnerCompanyBusinessUnitCompanyNameSearchConditions(): void
     {
         // Arrange
@@ -258,9 +234,6 @@ class GetMerchantRelationshipCollectionTest extends Unit
         $this->tester->assertCollectionDoesNotContainMerchantRelationship($merchantRelationship3Transfer, $merchantRelationshipCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testFiltersCollectionByAssigneeCompanyBusinessUnitNameSearchConditions(): void
     {
         // Arrange

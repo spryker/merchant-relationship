@@ -85,11 +85,6 @@ class MerchantRelationshipUpdater implements MerchantRelationshipUpdaterInterfac
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipResponseTransfer
-     */
     protected function updateByMerchantRelationshipRequestTransfer(
         MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer
     ): MerchantRelationshipResponseTransfer {
@@ -117,11 +112,6 @@ class MerchantRelationshipUpdater implements MerchantRelationshipUpdaterInterfac
         return $merchantRelationshipResponseTransfer->setMerchantRelationship($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function executeUpdateTransaction(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer->requireIdMerchantRelationship()
@@ -141,11 +131,6 @@ class MerchantRelationshipUpdater implements MerchantRelationshipUpdaterInterfac
         return $merchantRelationshipTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function executeMerchantRelationshipPostUpdatePlugins(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         foreach ($this->merchantRelationshipPostUpdatePlugins as $merchantRelationshipPostUpdatePlugin) {

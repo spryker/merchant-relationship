@@ -25,19 +25,11 @@ class MerchantRelationshipExpander implements MerchantRelationshipExpanderInterf
      */
     protected MerchantRelationshipRepositoryInterface $merchantRelationshipRepository;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
-     */
     public function __construct(MerchantRelationshipRepositoryInterface $merchantRelationshipRepository)
     {
         $this->merchantRelationshipRepository = $merchantRelationshipRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function expandWithName(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer->setName($this->createMerchantRelationshipName($merchantRelationshipTransfer));
@@ -45,11 +37,6 @@ class MerchantRelationshipExpander implements MerchantRelationshipExpanderInterf
         return $merchantRelationshipTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer
-     */
     public function expandMerchantRelationshipCollection(
         MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer
     ): MerchantRelationshipCollectionTransfer {
@@ -68,11 +55,6 @@ class MerchantRelationshipExpander implements MerchantRelationshipExpanderInterf
         return $merchantRelationshipCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return string
-     */
     protected function createMerchantRelationshipName(MerchantRelationshipTransfer $merchantRelationshipTransfer): string
     {
         return sprintf(

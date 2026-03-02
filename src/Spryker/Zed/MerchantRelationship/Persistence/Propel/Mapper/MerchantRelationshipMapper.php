@@ -49,12 +49,6 @@ class MerchantRelationshipMapper
             ->setMerchantRelationships(new ArrayObject($merchantRelationshipTransfers));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationship $spyMerchantRelationship
-     *
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationship
-     */
     public function mapMerchantRelationshipTransferToEntity(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         SpyMerchantRelationship $spyMerchantRelationship
@@ -66,13 +60,6 @@ class MerchantRelationshipMapper
         return $spyMerchantRelationship;
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationship $spyMerchantRelationship
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param bool $mapAssigneeCompanyBusinessUnits
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function mapEntityToMerchantRelationshipTransfer(
         SpyMerchantRelationship $spyMerchantRelationship,
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
@@ -105,12 +92,6 @@ class MerchantRelationshipMapper
         return $this->mapAssigneeCompanyBusinessUnits($spyMerchantRelationship, $merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationship $spyMerchantRelationship
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function mapMerchantRelationshipEntityToMerchantRelationshipTransfer(
         SpyMerchantRelationship $spyMerchantRelationship,
         MerchantRelationshipTransfer $merchantRelationshipTransfer
@@ -139,12 +120,6 @@ class MerchantRelationshipMapper
         return $merchantRelationshipTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyBusinessUnit\Persistence\SpyCompanyBusinessUnit $spyCompanyBusinessUnit
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     protected function mapCompanyBusinessUnitEntityToTransfer(
         SpyCompanyBusinessUnit $spyCompanyBusinessUnit,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
@@ -161,12 +136,6 @@ class MerchantRelationshipMapper
         return $companyBusinessUnitTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationship $spyMerchantRelationship
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function mapAssigneeCompanyBusinessUnits(
         SpyMerchantRelationship $spyMerchantRelationship,
         MerchantRelationshipTransfer $merchantRelationshipTransfer
@@ -185,12 +154,6 @@ class MerchantRelationshipMapper
         return $merchantRelationshipTransfer;
     }
 
-    /**
-     * @param \Propel\Runtime\Util\PropelModelPager $propelModelPager
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaginationTransfer
-     */
     protected function mapPaginationModelToPaginationTransfer(
         PropelModelPager $propelModelPager,
         PaginationTransfer $paginationTransfer

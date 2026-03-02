@@ -18,19 +18,11 @@ class MerchantReader implements MerchantReaderInterface
      */
     protected MerchantRelationshipToMerchantFacadeInterface $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(MerchantRelationshipToMerchantFacadeInterface $merchantFacade)
     {
         $this->merchantFacade = $merchantFacade;
     }
 
-    /**
-     * @param int $idMerchant
-     *
-     * @return \Generated\Shared\Transfer\MerchantTransfer|null
-     */
     public function findMerchant(int $idMerchant): ?MerchantTransfer
     {
         $merchantCriteriaTransfer = (new MerchantCriteriaTransfer())->setIdMerchant($idMerchant);

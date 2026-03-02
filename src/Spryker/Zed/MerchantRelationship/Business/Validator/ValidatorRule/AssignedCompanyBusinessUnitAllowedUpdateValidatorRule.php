@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTrans
 
 class AssignedCompanyBusinessUnitAllowedUpdateValidatorRule extends AbstractAssignedCompanyBusinessUnitValidatorRule
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     public function validate(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer

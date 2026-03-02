@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\MerchantRelationshipTransfer;
 
 class MerchantRelationshipCompanyBusinessUnitMapper implements MerchantRelationshipCompanyBusinessUnitMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitCollectionTransfer $addedCompanyBusinessUnitCollectionTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function mapCompanyBusinessUnitCollectionTransferToMerchantRelationshipTransfer(
         CompanyBusinessUnitCollectionTransfer $addedCompanyBusinessUnitCollectionTransfer,
         MerchantRelationshipTransfer $merchantRelationshipTransfer
@@ -39,12 +33,6 @@ class MerchantRelationshipCompanyBusinessUnitMapper implements MerchantRelations
         return $merchantRelationshipTransfer->setAssigneeCompanyBusinessUnits($companyBusinessUnitCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $addedCompanyBusinessUnitTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitCollectionTransfer $companyBusinessUnitCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitCollectionTransfer
-     */
     protected function mapCompanyBusinessUnitTransferToCompanyBusinessUnitCollectionTransfer(
         CompanyBusinessUnitTransfer $addedCompanyBusinessUnitTransfer,
         CompanyBusinessUnitCollectionTransfer $companyBusinessUnitCollectionTransfer
@@ -60,12 +48,6 @@ class MerchantRelationshipCompanyBusinessUnitMapper implements MerchantRelations
         return $companyBusinessUnitCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $addedCompanyBusinessUnitTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return bool
-     */
     protected function isSameCompanyBusinessUnit(
         CompanyBusinessUnitTransfer $addedCompanyBusinessUnitTransfer,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer

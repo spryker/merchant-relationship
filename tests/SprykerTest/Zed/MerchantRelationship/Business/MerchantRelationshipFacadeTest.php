@@ -75,9 +75,6 @@ class MerchantRelationshipFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationship(): void
     {
         $merchantRelationship = $this->tester->createMerchantRelationship(static::MR_KEY_1_TEST);
@@ -86,9 +83,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertNotNull($merchantRelationship->getIdMerchantRelationship());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipForwardCompatibility(): void
     {
         // Arrange
@@ -106,9 +100,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertNotNull($merchantRelationshipResponseTransfer->getMerchantRelationship()->getIdMerchantRelationship());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipWithNotUniqueKeyHasErrorsInResponse(): void
     {
         // Arrange
@@ -137,9 +128,6 @@ class MerchantRelationshipFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipWithNotUniqueKeyThrowsException(): void
     {
         // Arrange
@@ -153,9 +141,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->tester->getFacade()->createMerchantRelationship($newMerchantRelationshipTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipWithOwner(): void
     {
         // Arrange
@@ -169,9 +154,6 @@ class MerchantRelationshipFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipWithOneAssignee(): void
     {
         // Arrange
@@ -201,9 +183,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame(static::BU_OWNER_KEY_OWNER, $merchantRelationshipTransfer->getAssigneeCompanyBusinessUnits()->getCompanyBusinessUnits()[0]->getKey());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateMerchantRelationshipWithFewAssignee(): void
     {
         // Arrange
@@ -219,9 +198,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount(3, $merchantRelationship->getAssigneeCompanyBusinessUnits()->getCompanyBusinessUnits());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateMerchantRelationship(): void
     {
         // Arrange
@@ -250,9 +226,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame($newKey, $updatedMerchantRelationship->getMerchantRelationshipKey());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateMerchantRelationshipWithForwardCompatibility(): void
     {
         // Arrange
@@ -289,9 +262,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame($newKey, $updatedMerchantRelationship->getMerchantRelationshipKey());
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipById(): void
     {
         // Arrange
@@ -313,9 +283,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame($expectedMerchantRelationship->getIdMerchantRelationship(), $actualMerchantRelationship->getIdMerchantRelationship());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMerchantRelationship(): void
     {
         // Arrange
@@ -330,9 +297,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->tester->assertMerchantRelationshipDoesNotExist($idMerchantRelationship);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMerchantRelationshipForwardCompatible(): void
     {
         // Arrange
@@ -349,9 +313,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->tester->assertMerchantRelationshipDoesNotExist($idMerchantRelationship);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMerchantRelationshipWithAssigneeDeletesAssignee(): void
     {
         // Arrange
@@ -371,9 +332,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->tester->assertMerchantRelationshipToCompanyBusinessUnitDoesNotExist($idMerchantRelationship);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMerchantRelationshipExecutesAStackOfPostDeletePlugins(): void
     {
         // Assert
@@ -403,9 +361,6 @@ class MerchantRelationshipFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionWillReturnAllAvailableRelationships(): void
     {
         // Arrange
@@ -425,9 +380,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount($this->tester->getMerchantRelationsCount(), $merchantRelationTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionWillReturnRelationshipsFilteredByIds(): void
     {
         // Arrange
@@ -445,9 +397,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount(1, $merchantRelationTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredMerchantRelationshipCollection(): void
     {
         // Arrange
@@ -464,9 +413,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount(10, $merchantRelationshipTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredMerchantRelationshipCollectionShouldReturnEmptyCollectionWhenOutOfBounds(): void
     {
         // Arrange
@@ -482,9 +428,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount(0, $merchantRelationshipTransfers, 'The collection should be empty');
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredMerchantRelationshipCollectionFilteredByIdMerchantRelationship(): void
     {
         // Arrange
@@ -507,9 +450,6 @@ class MerchantRelationshipFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredMerchantRelationshipCollectionWithSortingAsc(): void
     {
         // Arrange
@@ -533,9 +473,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame('AAA-5', $merchantRelationshipTransfers[4]->getMerchantRelationshipKey());
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredMerchantRelationshipCollectionWithSortingDesc(): void
     {
         // Arrange
@@ -559,9 +496,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame('ZZZ-1', $merchantRelationshipTransfers[4]->getMerchantRelationshipKey());
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionByCriteriaTransfer(): void
     {
         // Arrange
@@ -588,9 +522,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame($this->tester->getMerchantRelationsCount(), $paginationTransfer->getNbResults());
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionByCriteriaShouldReturnEmptyCollectionWhenOutOfBounds(): void
     {
         // Arrange
@@ -608,9 +539,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertCount(0, $merchantRelationshipCollectionTransfer->getMerchantRelationships(), 'The collection should be empty');
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionByCriteriaFilteredByIdMerchantRelationship(): void
     {
         // Arrange
@@ -636,9 +564,6 @@ class MerchantRelationshipFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionByCriteriaWithSortingAsc(): void
     {
         // Arrange
@@ -673,9 +598,6 @@ class MerchantRelationshipFacadeTest extends Unit
         $this->assertSame('AAA-5', $merchantRelationships[4]->getMerchantRelationshipKey());
     }
 
-    /**
-     * @return void
-     */
     public function testGetMerchantRelationshipCollectionByCriteriaWithSortingDesc(): void
     {
         // Arrange

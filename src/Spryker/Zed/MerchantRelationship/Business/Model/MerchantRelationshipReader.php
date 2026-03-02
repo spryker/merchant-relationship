@@ -78,11 +78,6 @@ class MerchantRelationshipReader implements MerchantRelationshipReaderInterface
         return $this->merchantRelationshipExpander->expandWithName($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function findMerchantRelationshipByKey(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer->requireMerchantRelationshipKey();
@@ -144,11 +139,6 @@ class MerchantRelationshipReader implements MerchantRelationshipReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function findMerchantRelationshipById(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer->requireIdMerchantRelationship();
@@ -158,11 +148,6 @@ class MerchantRelationshipReader implements MerchantRelationshipReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function executeMerchantRelationshipExpanderPlugins(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         foreach ($this->merchantRelationshipExpanderPlugins as $merchantRelationshipExpanderPlugin) {

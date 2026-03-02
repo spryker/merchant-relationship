@@ -15,10 +15,6 @@ use Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryI
 
 class OwnerCompanyBusinessUnitAllowedValidatorRule extends AbstractMerchantRelationshipValidatorRule
 {
-    /**
-     * @param \Spryker\Zed\MerchantRelationship\Persistence\MerchantRelationshipRepositoryInterface $merchantRelationshipRepository
-     * @param \Spryker\Zed\MerchantRelationship\Dependency\Facade\MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     */
     public function __construct(
         MerchantRelationshipRepositoryInterface $merchantRelationshipRepository,
         MerchantRelationshipToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
@@ -27,12 +23,6 @@ class OwnerCompanyBusinessUnitAllowedValidatorRule extends AbstractMerchantRelat
         $this->companyBusinessUnitFacade = $companyBusinessUnitFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipValidationErrorCollectionTransfer
-     */
     public function validate(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         MerchantRelationshipValidationErrorCollectionTransfer $merchantRelationshipValidationErrorCollectionTransfer
@@ -74,12 +64,6 @@ class OwnerCompanyBusinessUnitAllowedValidatorRule extends AbstractMerchantRelat
         return $merchantRelationshipValidationErrorCollectionTransfer->addError($merchantRelationshipErrorTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $existingOwnerCompanyBusinessUnitTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $requestedOwnerCompanyBusinessUnitTransfer
-     *
-     * @return bool
-     */
     protected function isRequestedOwnerCompanyBusinessUnitAssignedToSameCompanyAsExisting(
         CompanyBusinessUnitTransfer $existingOwnerCompanyBusinessUnitTransfer,
         CompanyBusinessUnitTransfer $requestedOwnerCompanyBusinessUnitTransfer
@@ -97,12 +81,6 @@ class OwnerCompanyBusinessUnitAllowedValidatorRule extends AbstractMerchantRelat
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $requestedCompanyBusinessUnitTransfer
-     *
-     * @return bool
-     */
     protected function isSameCompanyBusinessUnit(
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer,
         CompanyBusinessUnitTransfer $requestedCompanyBusinessUnitTransfer

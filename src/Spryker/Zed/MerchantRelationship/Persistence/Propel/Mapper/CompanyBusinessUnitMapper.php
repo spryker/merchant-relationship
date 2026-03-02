@@ -36,12 +36,6 @@ class CompanyBusinessUnitMapper
         return $companyBusinessUnitTransfersGroupedByIdMerchantRelationship;
     }
 
-    /**
-     * @param \Orm\Zed\CompanyBusinessUnit\Persistence\SpyCompanyBusinessUnit $companyBusinessUnitEntity
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     protected function mapCompanyBusinessEntityToCompanyBusinessTransfer(
         SpyCompanyBusinessUnit $companyBusinessUnitEntity,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
