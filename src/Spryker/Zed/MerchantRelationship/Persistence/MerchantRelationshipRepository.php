@@ -213,7 +213,6 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
         $limit = $this->getFactory()->getConfig()->getDefaultPaginationLimit();
         $paginationTransfer = $merchantRelationshipCriteriaTransfer->getPagination();
 
-        $total = $merchantRelationshipQuery->count();
         $page = $this->calculatePageNumber($limit, $offset);
 
         if ($paginationTransfer) {
@@ -233,7 +232,7 @@ class MerchantRelationshipRepository extends AbstractRepository implements Merch
                 $propelModelPager,
             );
 
-        if ($offset > $total) {
+        if ($offset > $propelModelPager->getNbResults()) {
             return (new MerchantRelationshipCollectionTransfer())
                 ->setPagination($merchantRelationshipCollectionTransfer->getPagination());
         }

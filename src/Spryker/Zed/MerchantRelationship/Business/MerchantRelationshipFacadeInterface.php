@@ -137,6 +137,7 @@ interface MerchantRelationshipFacadeInterface
      * - Hydrate owner company business unit and merchant.
      * - Populates name in transfer.
      * - Executes a stack of {@link \Spryker\Zed\MerchantRelationshipExtension\Dependency\Plugin\MerchantRelationshipExpanderPluginInterface} plugins.
+     * - Uses `MerchantRelationshipCriteriaTransfer.withExpanderPlugins` to skip the expander plugin stack when set to `false`; the stack runs by default.
      * - From next major version (Forward Compatibility): Argument `$merchantRelationshipFilterTransfer` will be removed. The return type will be changed to `\Generated\Shared\Transfer\MerchantRelationshipResponseTransfer`.
      *
      * @api

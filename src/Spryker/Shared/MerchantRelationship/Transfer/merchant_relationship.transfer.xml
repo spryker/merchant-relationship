@@ -27,6 +27,7 @@
         <property name="pagination" type="Pagination"/>
         <property name="sortCollection" type="SortCollection"/>
         <property name="merchantRelationshipSearchConditions" type="MerchantRelationshipSearchConditions" strict="true"/>
+        <property name="withExpanderPlugins" type="bool" strict="true"/>
     </transfer>
 
     <transfer name="MerchantRelationshipConditions">

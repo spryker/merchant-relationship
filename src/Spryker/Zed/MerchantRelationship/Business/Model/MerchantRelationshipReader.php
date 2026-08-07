@@ -124,9 +124,14 @@ class MerchantRelationshipReader implements MerchantRelationshipReaderInterface
         );
         $this->merchantRelationshipExpander->expandMerchantRelationshipCollection($merchantRelationshipCollectionTransfer);
 
+        $shouldExecuteExpanderPlugins = $merchantRelationshipCriteriaTransfer->getWithExpanderPlugins() !== false;
+
         $merchantRelationshipTransfers = [];
         foreach ($merchantRelationshipCollectionTransfer->getMerchantRelationships() as $merchantRelationshipTransfer) {
-            $merchantRelationshipTransfer = $this->executeMerchantRelationshipExpanderPlugins($merchantRelationshipTransfer);
+            if ($shouldExecuteExpanderPlugins) {
+                $merchantRelationshipTransfer = $this->executeMerchantRelationshipExpanderPlugins($merchantRelationshipTransfer);
+            }
+
             $merchantRelationshipTransfers[] = $merchantRelationshipTransfer;
         }
 
